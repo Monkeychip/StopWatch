@@ -55,10 +55,10 @@ function enterNotes() {
 
   //run sum function
   var row = getNextRow()-1;
+  var rowBefore = getNextRow()-2;
   var cell = SpreadsheetApp.getActiveSpreadsheet().getRange("h"+row);
-  var wtf = row-16; //5 is the number of lines before 
-  var string = wtf.toString();
-  cell.setFormulaR1C1('=SUM(R[-'+string+']C[0]:R[-1]C[0])');
+  var cellBefore = 'h'+rowBefore;
+  cell.setFormula('=SUM(C'+row+':F'+row+')+'+cellBefore+'');
 }
 
 function addRecord(b,c,d,e,f) {
