@@ -2,7 +2,6 @@ function setValue(cellName, value){
   SpreadsheetApp.getActiveSpreadsheet().getRange(cellName).setValue(value);
 }
 
-
 function getNextRow(){
   return SpreadsheetApp.getActiveSpreadsheet().getLastRow() +1;
 }
@@ -10,6 +9,13 @@ function getNextRow(){
 function getValue(cellName){
   return SpreadsheetApp.getActiveSpreadsheet().getRange(cellName).getValue();
 }
+
+/*TO DO: ******
+convert to ES6
+clear values on one line of code per function
+Convert the row starting number to a function based on title value of header
+MS converter into one const and replace throughout
+**************/
 
 function Personal(){
   setValue('c14',new Date()); //sets timestamp when you hit instruction button
@@ -26,7 +32,6 @@ function Instruction() {
   setValue('f14','');
   setValue('g14','');
 }
-
 
 function Project() {
   setValue('e14',new Date());
